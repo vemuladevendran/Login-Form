@@ -1,0 +1,45 @@
+<div class="d-flex justify-content-center align-items-center" style="height: 100vh;">
+    <div class="new-account text-center">
+        <h1 class="form-title text-center mt-3">
+            CREATE ACCOUNT
+        </h1>
+        <!-- form details -->
+        <form class="form" #f="ngForm" (ngSubmit)="handlesubmit(f)">
+            <!-- user details -->
+
+            <div class="input-details">
+                <input ngModel type="text" placeholder="Yourname" name="yourname" required>
+                <i class="bi bi-person-bounding-box"></i>
+            </div>
+            <div class="input-details">
+                <input ngModel email type="email" placeholder="Email" name="email" required>
+                <i class="bi bi-envelope-fill"></i>
+            </div>
+            <div class="input-details">
+                <input ngModel type="text" placeholder="Mobile Number" name="mobile" required>
+                <i class="bi bi-phone-fill"></i>
+            </div>
+            <div class="input-details">
+                <input ngModel type="text"placeholder="DOB" name="dob" readonly>
+                <button type="button" class="bi bi-calendar2-month"></button>
+            </div>
+            <!-- password -->
+
+            <div class="input-details">
+                <input ngModel [attr.type]="isPasswordVisible ? 'text' : 'password'" placeholder="Password" name="password"
+                 required minlength="6">
+                <button type="button" (click)="toggelPasswordType()" class="bi"
+                    [ngClass]="!isPasswordVisible ? 'bi-eye-fill' : 'bi-eye-slash-fill'"></button>
+            </div>
+            <div class="input-details">
+                <input ngModel type="password" placeholder="Retype-Password" name="RetypePassword" required>
+            </div>
+
+            <!-- login button -->
+            <div class="d-flex justify-content-center">
+                <button class="btn btn-primary me-5" [disabled]="f.invalid">CREATE ACCOUNT</button>
+                <a routerLink="/login" class="ms-5">Login <i class="bi bi-arrow-right-circle-fill"></i></a>
+            </div>
+        </form>
+    </div>
+</div>
