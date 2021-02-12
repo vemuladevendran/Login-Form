@@ -3,23 +3,23 @@
         <h2 class="form-title text-center mt-3">
             Login Into Account
         </h2>
-        <form class="form" action="">
+        <form class="form" #f="ngForm">
             <!-- user details -->
 
             <div class="input-details">
-                <input type="text" placeholder="Yourname" name="yourname" required>
+                <input type="text" ngModel placeholder="Yourname" name="yourname" required>
                 <i class="bi bi-person-bounding-box"></i>
             </div>
             <!-- password -->
             <div class="input-details">
-                <input [attr.type]="isPasswordVisible ? 'text' : 'password'" placeholder="Password" name="password"
+                <input [attr.type]="isPasswordVisible ? 'text' : 'password'" ngModel placeholder="Password" name="password"
                     required>
                 <button type="button" (click)="toggelPasswordType()" class="bi"
                     [ngClass]="!isPasswordVisible ? 'bi-eye-fill' : 'bi-eye-slash-fill'"></button>
             </div>
             <!-- login button -->
             <div class="d-flex justify-content-center">
-                <button type="button" class="btn btn-primary me-5">Login Account</button>
+                <button type="button" [disabled]="f.invalid" class="btn btn-primary me-5">Login Account</button>
                 <a routerLink="/signup" class="ms-5">signup <i class="bi bi-arrow-right-circle-fill"></i></a>
             </div>
         </form>

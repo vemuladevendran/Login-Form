@@ -1,44 +1,52 @@
 /* You can add global styles to this file, and also import other style files */
+
 * {
     box-sizing: border-box;
 }
 
-
-.new-account,.old-account {
+.new-account, .old-account {
     border: 1px solid black;
     width: 24rem;
 }
 
 /* form details */
+
 .form-title {
     font-family: Montserrat;
     font-size: 24px;
 }
 
+/* input boxes */
+
 .form input {
-    padding: 10px;
-    border: none;
-
-}
-
-.input-details {
     width: 20rem;
+    padding: 10px;
     border: 1px solid black;
-
-}
-
-.input-details button {
-    background:none;
-    border: none;
 }
 
 .form div {
     margin: 1rem;
     margin-left: 2rem;
-
 }
 
 .form input::placeholder {
     color: gray;
     font-size: 10px;
+}
+ 
+
+/* input icons */
+.input-details {
+    position: relative;
+}
+
+.input-details i, .input-details button {
+    position: absolute;
+    right: 1.5rem;
+    top: .5rem;
+}
+
+.input-details button {
+    background: none;
+    border: none;
 }
